@@ -31,4 +31,9 @@ public class FilteredMealPresenter implements FilteredMealsPresenterInterface, N
     public void getMeals() {
         repository.getAllMeal(this);
     }
+
+    @Override
+    public void sendMealName(String name) {
+        repository.sendName(name);
+    }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,7 +24,7 @@ import com.example.myfoodplanner.db.ConcreteLocalSource;
 
 import java.util.List;
 
-public class FilteredMeals extends Fragment implements FilteredMealsInterface {
+public class FilteredMeals extends Fragment implements FilteredMealsInterface,MyClickListener {
 
     RecyclerView recyclerView;
     FilteredMealsPresenterInterface filteredMealsPresenterInterface;
@@ -51,7 +52,7 @@ public class FilteredMeals extends Fragment implements FilteredMealsInterface {
 
         filteredMealsPresenterInterface = new FilteredMealPresenter(this, Repository.getInstance(MealClient.getInstance(),
                 ConcreteLocalSource.getInstance(this.getContext()),getContext()));
-        filteredMealsAdaptor = new FilteredMealsAdaptor(this.getContext());
+        filteredMealsAdaptor = new FilteredMealsAdaptor(this.getContext(),this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(filteredMealsAdaptor);
         filteredMealsPresenterInterface.getMeals();
@@ -61,5 +62,11 @@ public class FilteredMeals extends Fragment implements FilteredMealsInterface {
     public void showList(List<Meal> meals) {
         filteredMealsAdaptor.setList(meals);
         filteredMealsAdaptor.notifyDataSetChanged();
+    }
+
+    @Override
+    public void onCLick(String name) {
+        filteredMealsPresenterInterface.sendMealName(name);
+        Navigation.findNavController(this.getView()).navigate(R.id.action_filteredMeals_to_mealFragment);
     }
 }

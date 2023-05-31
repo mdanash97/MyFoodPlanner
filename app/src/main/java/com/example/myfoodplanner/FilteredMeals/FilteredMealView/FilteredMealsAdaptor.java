@@ -22,9 +22,11 @@ public class FilteredMealsAdaptor extends RecyclerView.Adapter<FilteredMealsAdap
 
     private final Context context;
     private List<Meal> meals = new ArrayList<>();
+    MyClickListener myClickListener;
 
-    public FilteredMealsAdaptor(Context context) {
-            this.context = context;
+    public FilteredMealsAdaptor(Context context,MyClickListener myClickListener) {
+        this.context = context;
+        this.myClickListener = myClickListener;
             }
 
     public void setList(List<Meal> meals){
@@ -43,12 +45,20 @@ public class FilteredMealsAdaptor extends RecyclerView.Adapter<FilteredMealsAdap
 
     @Override
     public void onBindViewHolder(@NonNull FilteredMealsAdaptor.ViewHolder holder, int position) {
-            holder.name.setText(meals.get(position).getName());
-            Glide.with(context).load(meals.get(position).getThumbnail())
+            Meal meal = meals.get(position);
+            holder.name.setText(meal.getName());
+            Glide.with(context).load(meal.getThumbnail())
             .apply(new RequestOptions().override(200, 200))
             .placeholder(R.drawable.top_background)
             .error(R.drawable.top_background).into(holder.img);
+            holder.img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    myClickListener.onCLick(meal.getName());
+                }
+            });
             }
+
 
     @Override
     public int getItemCount() {
