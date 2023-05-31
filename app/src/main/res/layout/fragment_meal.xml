@@ -36,7 +36,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.5">
+        android:layout_weight="1">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -389,8 +389,10 @@
                     android:id="@+id/nameMeal"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="44dp"
+                    android:layout_marginStart="76dp"
                     android:text="TextView"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/guideline"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -400,12 +402,36 @@
                     android:id="@+id/areaMeal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="72dp"
+                    android:layout_marginEnd="56dp"
                     android:text="TextView"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/guideline"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.457" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="Country:"
+                    app:layout_constraintBottom_toBottomOf="@+id/areaMeal"
+                    app:layout_constraintEnd_toStartOf="@+id/areaMeal"
+                    app:layout_constraintTop_toTopOf="@+id/areaMeal"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="name:"
+                    app:layout_constraintBottom_toBottomOf="@+id/nameMeal"
+                    app:layout_constraintEnd_toStartOf="@+id/nameMeal"
+                    app:layout_constraintTop_toTopOf="@+id/nameMeal"
+                    app:layout_constraintVertical_bias="0.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
@@ -415,20 +441,20 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="0.75">
+        android:layout_weight="1">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#ECD8D8">
 
             <TextView
                 android:id="@+id/mealInstructors"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:padding="16dp"
                 android:elegantTextHeight="false"
                 android:gravity="center"
+                android:padding="16dp"
                 android:text="TextView"
                 android:textAlignment="center"
                 android:textSize="16sp"
@@ -440,12 +466,12 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.75">
+        android:layout_weight="1">
 
         <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
             android:id="@+id/youtube_player_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
     </FrameLayout>
 
