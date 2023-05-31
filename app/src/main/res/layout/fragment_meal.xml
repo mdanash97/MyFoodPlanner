@@ -58,37 +58,37 @@
                 </ScrollView>
 
                 <ImageView
-                    android:id="@+id/imageView25"
+                    android:id="@+id/ingImg13"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginTop="184dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView12"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg9"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView23"
+                    android:id="@+id/ingImg11"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="184dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg7"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView24"
+                    android:id="@+id/ingImg12"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginTop="184dp"
                     android:layout_marginEnd="4dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView10"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg8"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView27"
+                    android:id="@+id/ingImg15"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginTop="184dp"
@@ -98,108 +98,112 @@
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView26"
+                    android:id="@+id/ingImg14"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginTop="184dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView11"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg10"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView18"
+                    android:id="@+id/ingImg1"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginStart="8dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg7"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/ingName1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="TextView"
-                    android:textSize="8sp"
+                    android:textSize="7sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline2"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView8"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg6"
                     app:layout_constraintHorizontal_bias="0.473"
-                    app:layout_constraintStart_toStartOf="@+id/imageView8" />
+                    app:layout_constraintStart_toStartOf="@+id/ingImg6" />
 
                 <TextView
-                    android:id="@+id/textView25"
+                    android:id="@+id/ingName2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="TextView"
+                    android:textSize="7sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline2"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView9"
-                    app:layout_constraintStart_toEndOf="@+id/imageView8" />
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg7"
+                    app:layout_constraintStart_toEndOf="@+id/ingImg6" />
 
                 <TextView
-                    android:id="@+id/textView26"
+                    android:id="@+id/ingName3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="TextView"
+                    android:textSize="7sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline2"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView10"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg8"
                     app:layout_constraintHorizontal_bias="0.526"
-                    app:layout_constraintStart_toStartOf="@+id/imageView10" />
+                    app:layout_constraintStart_toStartOf="@+id/ingImg8" />
 
                 <TextView
-                    android:id="@+id/textView27"
+                    android:id="@+id/ingName4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="9dp"
                     android:layout_marginBottom="8dp"
                     android:text="TextView"
+                    android:textSize="7sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline2"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView12"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg9"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/imageView12" />
+                    app:layout_constraintStart_toStartOf="@+id/ingImg9" />
 
                 <TextView
-                    android:id="@+id/textView28"
+                    android:id="@+id/ingName5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="TextView"
+                    android:textSize="7sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline2"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView11"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg10"
                     app:layout_constraintHorizontal_bias="0.473"
-                    app:layout_constraintStart_toStartOf="@+id/imageView11" />
+                    app:layout_constraintStart_toStartOf="@+id/ingImg10" />
 
                 <ImageView
-                    android:id="@+id/imageView19"
+                    android:id="@+id/ingImg2"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginEnd="4dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView10"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg8"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView20"
+                    android:id="@+id/ingImg3"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView12"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg9"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView21"
+                    android:id="@+id/ingImg4"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView11"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg10"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView22"
+                    android:id="@+id/ingImg5"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginEnd="8dp"
@@ -229,46 +233,46 @@
                     app:layout_constraintGuide_begin="242dp" />
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/ingImg6"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="92dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView9"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg7"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView12"
+                    android:id="@+id/ingImg9"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginTop="92dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView11"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg10"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/ingImg8"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginTop="92dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView12"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg9"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/ingImg7"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginTop="92dp"
                     android:layout_marginEnd="4dp"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView10"
+                    app:layout_constraintEnd_toStartOf="@+id/ingImg8"
                     app:layout_constraintTop_toTopOf="@+id/guideline"
                     tools:src="@tools:sample/avatars" />
 
                 <ImageView
-                    android:id="@+id/imageView11"
+                    android:id="@+id/ingImg10"
                     android:layout_width="77dp"
                     android:layout_height="67dp"
                     android:layout_marginTop="92dp"
@@ -278,98 +282,108 @@
                     tools:src="@tools:sample/avatars" />
 
                 <TextView
-                    android:id="@+id/textView29"
+                    android:id="@+id/ingName6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="TextView"
+                    android:textSize="7sp"
                     app:layout_constraintBottom_toTopOf="@+id/guideline3"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView8"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg6"
                     app:layout_constraintHorizontal_bias="0.473"
-                    app:layout_constraintStart_toStartOf="@+id/imageView8" />
+                    app:layout_constraintStart_toStartOf="@+id/ingImg6" />
 
                 <TextView
-                    android:id="@+id/textView31"
+                    android:id="@+id/ingName7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView29"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView9"
-                    app:layout_constraintStart_toEndOf="@+id/imageView8" />
+                    android:textSize="7sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ingName6"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg7"
+                    app:layout_constraintStart_toEndOf="@+id/ingImg6" />
 
                 <TextView
-                    android:id="@+id/textView32"
+                    android:id="@+id/ingName8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView31"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView10"
-                    app:layout_constraintStart_toStartOf="@+id/imageView10" />
+                    android:textSize="7sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ingName7"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg8"
+                    app:layout_constraintStart_toStartOf="@+id/ingImg8" />
 
                 <TextView
-                    android:id="@+id/textView33"
+                    android:id="@+id/ingName9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView32"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView12"
-                    app:layout_constraintStart_toStartOf="@+id/imageView12" />
+                    android:textSize="7sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ingName8"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg9"
+                    app:layout_constraintStart_toStartOf="@+id/ingImg9" />
 
                 <TextView
-                    android:id="@+id/textView34"
+                    android:id="@+id/ingName10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView33"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView11"
-                    app:layout_constraintStart_toStartOf="@+id/imageView11" />
+                    android:textSize="7sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ingName9"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg10"
+                    app:layout_constraintStart_toStartOf="@+id/ingImg10" />
 
                 <TextView
-                    android:id="@+id/textView35"
+                    android:id="@+id/ingName11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
                     android:text="TextView"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView23"
-                    app:layout_constraintStart_toStartOf="@+id/imageView23"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView23" />
+                    android:textSize="7sp"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg11"
+                    app:layout_constraintStart_toStartOf="@+id/ingImg11"
+                    app:layout_constraintTop_toBottomOf="@+id/ingImg11" />
 
                 <TextView
-                    android:id="@+id/textView36"
+                    android:id="@+id/ingName12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView35"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView24"
-                    app:layout_constraintStart_toStartOf="@+id/imageView24" />
+                    android:textSize="7sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ingName11"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg12"
+                    app:layout_constraintStart_toStartOf="@+id/ingImg12" />
 
                 <TextView
-                    android:id="@+id/textView37"
+                    android:id="@+id/ingName13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView36"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView25"
-                    app:layout_constraintStart_toStartOf="@+id/imageView25"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView25" />
+                    android:textSize="7sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ingName12"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg13"
+                    app:layout_constraintStart_toStartOf="@+id/ingImg13"
+                    app:layout_constraintTop_toBottomOf="@+id/ingImg13" />
 
                 <TextView
-                    android:id="@+id/textView38"
+                    android:id="@+id/ingName14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView37"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView26"
-                    app:layout_constraintStart_toStartOf="@+id/imageView26" />
+                    android:textSize="7sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ingName13"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg14"
+                    app:layout_constraintStart_toStartOf="@+id/ingImg14" />
 
                 <TextView
-                    android:id="@+id/textView39"
+                    android:id="@+id/ingName15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="TextView"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView38"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView27"
-                    app:layout_constraintStart_toStartOf="@+id/imageView27" />
+                    android:textSize="7sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/ingName14"
+                    app:layout_constraintEnd_toEndOf="@+id/ingImg15"
+                    app:layout_constraintStart_toStartOf="@+id/ingImg15" />
 
                 <TextView
                     android:id="@+id/nameMeal"
@@ -401,31 +415,33 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="center"
-        android:layout_weight="0.5">
+        android:layout_weight="0.75">
 
-        <TextView
-            android:id="@+id/mealInstructors"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:elegantTextHeight="false"
-            android:gravity="center"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textSize="16sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/mealInstructors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:padding="16dp"
+                android:elegantTextHeight="false"
+                android:gravity="center"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </ScrollView>
+
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="0.75">
 
-        <VideoView
-            android:id="@+id/mealVideo"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp" />
     </FrameLayout>
 
 </LinearLayout>
