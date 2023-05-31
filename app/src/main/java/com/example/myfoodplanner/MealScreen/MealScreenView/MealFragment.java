@@ -26,9 +26,9 @@ import com.example.myfoodplanner.Model.Repository;
 import com.example.myfoodplanner.NetworkConnection.MealClient;
 import com.example.myfoodplanner.R;
 import com.example.myfoodplanner.db.ConcreteLocalSource;
-import com.google.android.youtube.player.YouTubePlayerView;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import org.w3c.dom.Text;
 
@@ -42,9 +42,10 @@ public class MealFragment extends Fragment implements MealViewInterface{
     ImageView mealImg;
     ImageView ingImg1,ingImg2,ingImg3,ingImg4,ingImg5,ingImg6,ingImg7,ingImg8,ingImg9,ingImg10,ingImg11,ingImg12,ingImg13,ingImg14,ingImg15;
     TextView ingName1,ingName2,ingName3,ingName4,ingName5,ingName6,ingName7,ingName8,ingName9,ingName10,ingName11,ingName12,ingName13,ingName14,ingName15;
-    YouTubePlayerView youTubePlayerView;
     TextView instructions;
     MealPresenterInterface mealPresenterInterface;
+    YouTubePlayerView youTubePlayerView;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +99,8 @@ public class MealFragment extends Fragment implements MealViewInterface{
         ingName13 = view.findViewById(R.id.ingName13);
         ingName14 = view.findViewById(R.id.ingName14);
         ingName15 = view.findViewById(R.id.ingName15);
+        youTubePlayerView = view.findViewById(R.id.youtube_player_view);
+        getLifecycle().addObserver(youTubePlayerView);
 
     }
 
@@ -110,8 +113,16 @@ public class MealFragment extends Fragment implements MealViewInterface{
                 .placeholder(R.drawable.top_background)
                 .error(R.drawable.top_background).into(mealImg);
         instructions.setText(meal.get(0).getInstructions());
-        String[] yt = meal.get(0).getYoutubeLink().split("=");
-        //Log.i(TAG, "showMeal: "+yt[1]);
+        youTubePlayerView.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+            @Override
+            public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                super.onReady(youTubePlayer);
+                String[] videoID=(meal.get(0).getYoutubeLink()).split("=");
+                Log.i(TAG, "onReady: "+videoID[0]);
+                youTubePlayer.loadVideo(videoID[1], 0);
+            }
+        });
+
         if(!(meal.get(0).getIngredient1()).equals(null)){
             Glide.with(this.getContext()).load("https://www.themealdb.com/images/ingredients/"+meal.get(0).getIngredient1()+"-Small.png")
                     .apply(new RequestOptions().override(200, 200))
