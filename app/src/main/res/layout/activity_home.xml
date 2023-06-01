@@ -44,5 +44,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navi_bar_guest"
         android:visibility="gone"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavNoInternet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fee4d5"
+        app:elevation="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottombar_nointernet"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

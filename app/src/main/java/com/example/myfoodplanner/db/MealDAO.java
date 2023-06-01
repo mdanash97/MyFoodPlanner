@@ -6,6 +6,7 @@ import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.myfoodplanner.Model.Meal;
 
@@ -21,4 +22,11 @@ public interface MealDAO {
 
     @Delete
     void deleteMeal(Meal meal);
+
+    @Query("UPDATE Meals set day = :day WHERE name= :name ")
+    void updateMeal(String day,String name);
+
+    @Query("SELECT * From Meals WHERE day = :day")
+     LiveData<List<Meal>> getPlan(String day);
+
 }

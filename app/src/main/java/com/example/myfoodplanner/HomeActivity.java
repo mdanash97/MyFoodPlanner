@@ -6,7 +6,11 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +29,7 @@ public class HomeActivity extends AppCompatActivity {
     GoogleSignInAccount account;
     BottomNavigationView bottomNavigationView;
     BottomNavigationView bottomNavigationViewGuest;
+    BottomNavigationView bottomNavigationNoCon;
     NavController navController;
     boolean guest;
 
@@ -40,14 +45,40 @@ public class HomeActivity extends AppCompatActivity {
         guest = intent.getBooleanExtra("guest",true);
         bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationViewGuest = findViewById(R.id.bottomNavGuest);
+        bottomNavigationNoCon = findViewById(R.id.bottomNavNoInternet);
         navController = Navigation.findNavController(this,R.id.nav_host_fragment);
 
-        if(guest){
-            NavigationUI.setupWithNavController(bottomNavigationView,navController,false);
-        }else{
-            bottomNavigationViewGuest.setVisibility(View.VISIBLE);
+//        if(guest){
+//            NavigationUI.setupWithNavController(bottomNavigationView,navController,false);
+//        }else{
+//            bottomNavigationViewGuest.setVisibility(View.VISIBLE);
+//            bottomNavigationView.setVisibility(View.GONE);
+//            NavigationUI.setupWithNavController(bottomNavigationViewGuest,navController,false);
+//        }
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        Network network = connectivityManager.getActiveNetwork();
+        if (network != null) {
+            NetworkCapabilities capabilities = connectivityManager.getNetworkCapabilities(network);
+            if (capabilities != null && (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) || capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR))) {
+                if(guest){
+                    NavigationUI.setupWithNavController(bottomNavigationView,navController,false);
+                }else{
+                    bottomNavigationViewGuest.setVisibility(View.VISIBLE);
+                    bottomNavigationView.setVisibility(View.GONE);
+                    NavigationUI.setupWithNavController(bottomNavigationViewGuest,navController,false);
+                }
+            } else {
+                bottomNavigationNoCon.setVisibility(View.VISIBLE);
+                bottomNavigationViewGuest.setVisibility(View.GONE);
+                bottomNavigationView.setVisibility(View.GONE);
+                NavigationUI.setupWithNavController(bottomNavigationNoCon,navController,false);
+            }
+        } else {
+            bottomNavigationNoCon.setVisibility(View.VISIBLE);
+            bottomNavigationViewGuest.setVisibility(View.GONE);
             bottomNavigationView.setVisibility(View.GONE);
-            NavigationUI.setupWithNavController(bottomNavigationViewGuest,navController,false);
+            NavigationUI.setupWithNavController(bottomNavigationNoCon,navController,false);
         }
 
     }

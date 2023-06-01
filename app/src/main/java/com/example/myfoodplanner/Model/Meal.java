@@ -182,6 +182,8 @@ public class Meal {
     @SerializedName("strType")
     private String type;
 
+    private String day;
+
     private String ingredientImage;
 
 
@@ -723,5 +725,13 @@ public class Meal {
 
     public void setIngredientImage(String ingredientImage) {
         this.ingredientImage = ingredientImage;
+    }
+
+    public String getDay() {
+        return day;
+    }
+
+    public void setDay(String day) {
+        this.day = day;
     }
 }

@@ -47,8 +47,25 @@ public class ConcreteLocalSource implements LocalSource {
         }).start();
     }
 
+
     @Override
     public LiveData<List<Meal>> getAllSavedMeals() {
         return savedMeals;
+    }
+
+    @Override
+    public void updateMeal(String day, String mealName) {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mealDAO.updateMeal(day,mealName);;
+            }
+        }).start();
+
+    }
+
+    @Override
+    public LiveData<List<Meal>> getPlan(String day) {
+        return mealDAO.getPlan(day);
     }
 }

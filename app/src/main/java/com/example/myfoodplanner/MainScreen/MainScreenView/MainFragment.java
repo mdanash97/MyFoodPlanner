@@ -60,8 +60,6 @@ public class MainFragment extends Fragment implements MainViewInterface {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
         mainScreenPresenterInterface = new MainScreenPresenter(this, Repository.getInstance(MealClient.getInstance(),
                 ConcreteLocalSource.getInstance(this.getContext()),getContext()));
 
