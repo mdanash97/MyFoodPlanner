@@ -18,7 +18,12 @@
         android:id="@+id/mealFragment"
         android:name="com.example.myfoodplanner.MealScreen.MealScreenView.MealFragment"
         android:label="fragment_meal"
-        tools:layout="@layout/fragment_meal" />
+        tools:layout="@layout/fragment_meal" >
+        <argument
+            android:name="saved"
+            app:argType="boolean"
+            android:defaultValue="true" />
+    </fragment>
     <fragment
         android:id="@+id/savedMealsFragment"
         android:name="com.example.myfoodplanner.SavedMeals.SavedMealsView.SavedMealsFragment"

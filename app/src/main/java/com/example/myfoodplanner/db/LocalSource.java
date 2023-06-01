@@ -9,5 +9,5 @@ import java.util.List;
 public interface LocalSource {
     void insertMeal(Meal meal);
     void deleteMeal(Meal meal);
-    LiveData<List<Meal>> getAllSavedProducts();
+    LiveData<List<Meal>> getAllSavedMeals();
 }

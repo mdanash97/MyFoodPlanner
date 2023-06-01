@@ -1,22 +1,17 @@
 package com.example.myfoodplanner.MealScreen.MealScreenView;
 
-import static android.content.ContentValues.TAG;
 
-import android.net.Uri;
 import android.os.Bundle;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
-import android.util.Log;
+import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.myfoodplanner.MealScreen.MealScreenPresenter.MealPresenter;
@@ -29,9 +24,6 @@ import com.example.myfoodplanner.db.ConcreteLocalSource;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
-
-import org.w3c.dom.Text;
-
 import java.util.List;
 
 
@@ -45,6 +37,8 @@ public class MealFragment extends Fragment implements MealViewInterface{
     TextView instructions;
     MealPresenterInterface mealPresenterInterface;
     YouTubePlayerView youTubePlayerView;
+    Button saveMeal;
+    Boolean saved;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +56,7 @@ public class MealFragment extends Fragment implements MealViewInterface{
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        saved = MealFragmentArgs.fromBundle(getArguments()).getSaved();
         mealPresenterInterface = new MealPresenter(this, Repository.getInstance(MealClient.getInstance(),
                 ConcreteLocalSource.getInstance(this.getContext()),getContext()));
         mealPresenterInterface.getMeal();
@@ -101,6 +96,10 @@ public class MealFragment extends Fragment implements MealViewInterface{
         ingName15 = view.findViewById(R.id.ingName15);
         youTubePlayerView = view.findViewById(R.id.youtube_player_view);
         getLifecycle().addObserver(youTubePlayerView);
+        saveMeal = view.findViewById(R.id.saveMeal);
+        if(!saved){
+            saveMeal.setText("Remove");
+        }
 
     }
 
@@ -118,7 +117,6 @@ public class MealFragment extends Fragment implements MealViewInterface{
             public void onReady(@NonNull YouTubePlayer youTubePlayer) {
                 super.onReady(youTubePlayer);
                 String[] videoID=(meal.get(0).getYoutubeLink()).split("=");
-                Log.i(TAG, "onReady: "+videoID[0]);
                 youTubePlayer.loadVideo(videoID[1], 0);
             }
         });
@@ -228,6 +226,21 @@ public class MealFragment extends Fragment implements MealViewInterface{
                     .error(0).into(ingImg15);
             ingName15.setText(meal.get(0).getIngredient15()+" "+meal.get(0).getMeasure15());
         }
+        saveMeal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (saved){
+                    mealPresenterInterface.addToFav(meal.get(0));
+                    saved = false;
+                    saveMeal.setText("Remove");
+                }else{
+                    mealPresenterInterface.deleteFromFave(meal.get(0));
+                    saved = true;
+                    saveMeal.setText("Save");
+                    Navigation.findNavController(v).popBackStack();
+                }
+            }
+        });
 
     }
 

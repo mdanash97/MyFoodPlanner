@@ -14,15 +14,6 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="77dp"
-            android:layout_height="34dp"
-            android:layout_gravity="right"
-            android:elevation="8dp"
-            android:text="Save"
-            android:textSize="12sp" />
-
         <ImageView
             android:id="@+id/imgMeal"
             android:layout_width="match_parent"
@@ -30,6 +21,16 @@
             android:layout_margin="16dp"
             android:elevation="16dp"
             tools:src="@tools:sample/avatars" />
+
+        <Button
+            android:id="@+id/saveMeal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:elevation="8dp"
+            android:text="Save"
+            android:textSize="10sp"
+            android:textStyle="bold" />
 
     </FrameLayout>
 
@@ -389,49 +390,43 @@
                     android:id="@+id/nameMeal"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="76dp"
-                    android:text="TextView"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/guideline"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.457" />
+                    app:layout_constraintVertical_bias="0.771" />
 
                 <TextView
                     android:id="@+id/areaMeal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="56dp"
-                    android:text="TextView"
                     android:textSize="14sp"
                     android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/nameMeal"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.457" />
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="64dp"
                     android:text="Country:"
-                    app:layout_constraintBottom_toBottomOf="@+id/areaMeal"
-                    app:layout_constraintEnd_toStartOf="@+id/areaMeal"
-                    app:layout_constraintTop_toTopOf="@+id/areaMeal"
-                    app:layout_constraintVertical_bias="0.0" />
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="36dp"
                     android:text="name:"
-                    app:layout_constraintBottom_toBottomOf="@+id/nameMeal"
-                    app:layout_constraintEnd_toStartOf="@+id/nameMeal"
-                    app:layout_constraintTop_toTopOf="@+id/nameMeal"
-                    app:layout_constraintVertical_bias="0.0" />
+                    android:textStyle="italic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>
@@ -455,7 +450,6 @@
                 android:elegantTextHeight="false"
                 android:gravity="center"
                 android:padding="16dp"
-                android:text="TextView"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:textStyle="bold" />

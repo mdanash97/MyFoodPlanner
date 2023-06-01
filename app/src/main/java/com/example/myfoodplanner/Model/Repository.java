@@ -42,27 +42,17 @@ public class Repository implements RepositoryInterface{
 
     @Override
     public void insertData(Meal meals) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                mealDAO.insertMeal(meals);
-            }
-        }).start();
+        localSource.insertMeal(meals);
     }
 
     @Override
     public void deleteData(Meal meals) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                mealDAO.deleteMeal(meals);
-            }
-        }).start();
+        localSource.deleteMeal(meals);
     }
 
     @Override
     public LiveData<List<Meal>> getStoredData() {
-        return mealList;
+        return localSource.getAllSavedMeals();
     }
 
     @Override

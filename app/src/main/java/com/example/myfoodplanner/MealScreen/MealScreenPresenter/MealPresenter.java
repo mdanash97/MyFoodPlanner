@@ -22,8 +22,13 @@ public class MealPresenter implements MealPresenterInterface, NetworkDelegateMea
     }
 
     @Override
-    public void sendMealName(String mealName) {
+    public void addToFav(Meal meal) {
+        repository.insertData(meal);
+    }
 
+    @Override
+    public void deleteFromFave(Meal meal) {
+        repository.deleteData(meal);
     }
 
     @Override

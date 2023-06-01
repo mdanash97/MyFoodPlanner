@@ -48,7 +48,7 @@ public class ConcreteLocalSource implements LocalSource {
     }
 
     @Override
-    public LiveData<List<Meal>> getAllSavedProducts() {
+    public LiveData<List<Meal>> getAllSavedMeals() {
         return savedMeals;
     }
 }
