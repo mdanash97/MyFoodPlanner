@@ -43,7 +43,7 @@ public class SignInActivity extends AppCompatActivity {
     ImageView twitterAuth;
     Intent intent;
     ProgressBar progressBar;
-    final String guest = "GUEST";
+    final boolean guest = false;
     GoogleSignInOptions gso;
     GoogleSignInClient gsc;
 
@@ -96,7 +96,7 @@ public class SignInActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getApplicationContext(),HomeActivity.class);
-                intent.putExtra(guest,guest);
+                intent.putExtra("guest",guest);
                 startActivity(intent);
                 finish();
             }
