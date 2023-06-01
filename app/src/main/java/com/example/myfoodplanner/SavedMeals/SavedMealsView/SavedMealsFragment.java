@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.myfoodplanner.FilteredMeals.FilteredMealPresenter.FilteredMealPresenter;
 import com.example.myfoodplanner.FilteredMeals.FilteredMealPresenter.FilteredMealsPresenterInterface;
@@ -34,6 +35,7 @@ public class SavedMealsFragment extends Fragment implements SavedMealInterface,M
     SavedMealPresenterInterface savedMealPresenterInterface;
     SavedMealAdaptor savedMealAdaptor;
     RecyclerView.LayoutManager layoutManager;
+    TextView empty;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +52,7 @@ public class SavedMealsFragment extends Fragment implements SavedMealInterface,M
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        empty = view.findViewById(R.id.emptyText);
         recyclerView = view.findViewById(R.id.savedRV);
         layoutManager = new LinearLayoutManager(this.getContext());
         savedMealPresenterInterface = new SavedMealsPresenter(Repository.getInstance(MealClient.getInstance(),
@@ -63,13 +65,20 @@ public class SavedMealsFragment extends Fragment implements SavedMealInterface,M
             public void onChanged(List<Meal> meal) {
                 savedMealAdaptor.setList((List<Meal>) meal);
                 savedMealAdaptor.notifyDataSetChanged();
+                if(savedMealAdaptor.getItemCount()>0){
+                    empty.setVisibility(View.GONE);
+                }else{
+                    empty.setVisibility(View.VISIBLE);
+                }
             }
         });
+
     }
 
     @Override
     public void onClick(String meal) {
         savedMealPresenterInterface.showMeal(meal);
+
         SavedMealsFragmentDirections.ActionSavedMealsFragmentToMealFragment action = SavedMealsFragmentDirections.actionSavedMealsFragmentToMealFragment();
         action.setSaved(false);
         Navigation.findNavController(this.getView()).navigate(action);

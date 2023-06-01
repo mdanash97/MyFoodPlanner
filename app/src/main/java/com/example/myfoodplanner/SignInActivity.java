@@ -153,6 +153,7 @@ public class SignInActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1000){
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            goToHome();
             try {
                 task.getResult(ApiException.class);
             } catch (ApiException e) {
