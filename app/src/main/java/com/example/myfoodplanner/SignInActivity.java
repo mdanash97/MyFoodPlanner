@@ -24,9 +24,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -72,7 +74,7 @@ public class SignInActivity extends AppCompatActivity {
         googleAuth = findViewById(R.id.googleAuth);
 
         mAuth = FirebaseAuth.getInstance();
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail().build();
         gsc = GoogleSignIn.getClient(this,gso);
 
@@ -153,18 +155,25 @@ public class SignInActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == 1000){
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-            goToHome();
             try {
-                task.getResult(ApiException.class);
+                GoogleSignInAccount account = task.getResult(ApiException.class);
+
+                AuthCredential credential = GoogleAuthProvider.getCredential(account.getIdToken(),null);
+                FirebaseAuth.getInstance().signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+                            Intent intent = new Intent(SignInActivity.this,HomeActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }else{
+                            Toast.makeText(SignInActivity.this,"Something went wrong, Please try again later",Toast.LENGTH_SHORT);
+                        }
+                    }
+                });
             } catch (ApiException e) {
                 Toast.makeText(this,"Something went wrong, Please try again later",Toast.LENGTH_SHORT);
             }
         }
-    }
-
-    private void goToHome() {
-        finish();
-        Intent intent = new Intent(SignInActivity.this,HomeActivity.class);
-        startActivity(intent);
     }
 }
