@@ -41,12 +41,12 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationViewGuest = findViewById(R.id.bottomNavGuest);
         navController = Navigation.findNavController(this,R.id.nav_host_fragment);
-        //NavigationUI.setupWithNavController(bottomNavigationView,navController,false);
 
         if(guest){
             NavigationUI.setupWithNavController(bottomNavigationView,navController,false);
         }else{
             bottomNavigationViewGuest.setVisibility(View.VISIBLE);
+            bottomNavigationView.setVisibility(View.GONE);
             NavigationUI.setupWithNavController(bottomNavigationViewGuest,navController,false);
         }
 

@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.myfoodplanner.MealScreen.MealScreenPresenter.MealPresenter;
@@ -20,6 +22,7 @@ import com.example.myfoodplanner.Model.Meal;
 import com.example.myfoodplanner.Model.Repository;
 import com.example.myfoodplanner.NetworkConnection.MealClient;
 import com.example.myfoodplanner.R;
+import com.example.myfoodplanner.SignInActivity;
 import com.example.myfoodplanner.db.ConcreteLocalSource;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
@@ -51,11 +54,13 @@ public class MealFragment extends Fragment implements MealViewInterface{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_meal, container, false);
+
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         saved = MealFragmentArgs.fromBundle(getArguments()).getSaved();
         mealPresenterInterface = new MealPresenter(this, Repository.getInstance(MealClient.getInstance(),
                 ConcreteLocalSource.getInstance(this.getContext()),getContext()));
@@ -105,6 +110,7 @@ public class MealFragment extends Fragment implements MealViewInterface{
 
     @Override
     public void showMeal(List<Meal> meal) {
+
         mealName.setText(meal.get(0).getName());
         mealArea.setText(meal.get(0).getArea());
         Glide.with(this.getContext()).load(meal.get(0).getThumbnail())
@@ -239,6 +245,7 @@ public class MealFragment extends Fragment implements MealViewInterface{
                     saveMeal.setText("Save");
                     Navigation.findNavController(v).popBackStack();
                 }
+
             }
         });
 

@@ -48,8 +48,8 @@
         android:label="fragment_my_meal_plan"
         tools:layout="@layout/fragment_my_meal_plan" >
         <action
-            android:id="@+id/action_myMealPlanFragment_to_mealFragment"
-            app:destination="@id/mealFragment" />
+            android:id="@+id/action_myMealPlanFragment_to_filteredMeals"
+            app:destination="@id/filteredMeals" />
     </fragment>
     <fragment
         android:id="@+id/filterFragment"
