@@ -61,7 +61,7 @@ public class MainFragment extends Fragment implements MainViewInterface {
         super.onViewCreated(view, savedInstanceState);
 
         mainScreenPresenterInterface = new MainScreenPresenter(this, Repository.getInstance(MealClient.getInstance(),
-                ConcreteLocalSource.getInstance(this.getContext()),getContext()));
+                ConcreteLocalSource.getInstance(this.getContext())));
 
         mealArea = view.findViewById(R.id.mealAreaMain);
         mealName = view.findViewById(R.id.mealNameMain);

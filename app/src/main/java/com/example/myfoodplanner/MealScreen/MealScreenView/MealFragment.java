@@ -63,7 +63,7 @@ public class MealFragment extends Fragment implements MealViewInterface{
 
         saved = MealFragmentArgs.fromBundle(getArguments()).getSaved();
         mealPresenterInterface = new MealPresenter(this, Repository.getInstance(MealClient.getInstance(),
-                ConcreteLocalSource.getInstance(this.getContext()),getContext()));
+                ConcreteLocalSource.getInstance(this.getContext())));
         mealPresenterInterface.getMeal();
         mealName = view.findViewById(R.id.nameMeal);
         mealArea = view.findViewById(R.id.areaMeal);

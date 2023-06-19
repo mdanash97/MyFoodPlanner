@@ -24,18 +24,14 @@ public class Repository implements RepositoryInterface{
     private RemoteSource remoteSource;
     private LocalSource localSource;
 
-    private Repository(RemoteSource remoteSource, LocalSource localSource, Context context) {
+    private Repository(RemoteSource remoteSource, LocalSource localSource) {
         this.remoteSource = remoteSource;
-        this.context = context;
         this.localSource = localSource;
-        AppDataBase db = AppDataBase.getInstance(context.getApplicationContext());
-        mealDAO = db.mealDAO();
-        mealList = mealDAO.getAllMeals();
     }
 
-    public static Repository getInstance(RemoteSource remoteSource, LocalSource localSource,Context context){
+    public static Repository getInstance(RemoteSource remoteSource, LocalSource localSource){
         if(repository==null){
-            repository = new Repository(remoteSource,localSource,context);
+            repository = new Repository(remoteSource,localSource);
         }
         return repository;
     }

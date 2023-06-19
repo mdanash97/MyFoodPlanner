@@ -56,7 +56,7 @@ public class SavedMealsFragment extends Fragment implements SavedMealInterface,M
         recyclerView = view.findViewById(R.id.savedRV);
         layoutManager = new LinearLayoutManager(this.getContext());
         savedMealPresenterInterface = new SavedMealsPresenter(Repository.getInstance(MealClient.getInstance(),
-                ConcreteLocalSource.getInstance(this.getContext()),getContext()),this);
+                ConcreteLocalSource.getInstance(this.getContext())),this);
         savedMealAdaptor = new SavedMealAdaptor(this.getContext(),this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(savedMealAdaptor);

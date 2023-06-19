@@ -51,7 +51,7 @@ public class FilteredMeals extends Fragment implements FilteredMealsInterface,My
         layoutManager = new LinearLayoutManager(this.getContext());
 
         filteredMealsPresenterInterface = new FilteredMealPresenter(this, Repository.getInstance(MealClient.getInstance(),
-                ConcreteLocalSource.getInstance(this.getContext()),getContext()));
+                ConcreteLocalSource.getInstance(this.getContext())));
         filteredMealsAdaptor = new FilteredMealsAdaptor(this.getContext(),this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(filteredMealsAdaptor);

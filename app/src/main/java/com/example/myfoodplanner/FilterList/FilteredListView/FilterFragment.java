@@ -58,7 +58,7 @@ public class FilterFragment extends Fragment implements FilterViewInterface , My
         recyclerView = view.findViewById(R.id.searchFilterRV);
         layoutManager = new GridLayoutManager(getContext(),2,GridLayoutManager.VERTICAL,false);
         filteredListPresenterInterface = new FilteredListPresenter(this, Repository.getInstance(MealClient.getInstance(),
-                ConcreteLocalSource.getInstance(this.getContext()),getContext()));
+                ConcreteLocalSource.getInstance(this.getContext())));
         filteredListAreaAdapter = new FilteredListAreaAdapter(this.getContext(),this);
         filteredListIngredientAdapter = new FilteredListIngredientAdapter(this.getContext(),this);
         filteredListCategoriesAdapter = new FilteredListCategoriesAdapter(this.getContext(),this);
